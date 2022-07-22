@@ -19,7 +19,7 @@ jobs:
       - checkout
       # Then simply use the dotnet container as you'd expect and run your commands
       - run:
-          name: Build and publish
+          name: Restore
           command: |
             dotnet restore
       - run:
@@ -27,9 +27,9 @@ jobs:
           command: |
             dotnet build --configuration Release
       - run:
-          name: "Publish to a subfolder"
+          name: Publish
           command: |
-            dotnet.exe publish --configuration Release --output WebAPIFolder
+            dotnet publish --configuration Release --output WebAPIFolder
       - persist_to_workspace:
           root: ~/project
           paths:
