@@ -30,10 +30,8 @@ jobs:
           name: Publish
           command: |
             dotnet publish --configuration Release --output WebAPIFolder
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - WebAPIFolder
+      - store_artifacts:
+          path: /WebAPIFolder
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
