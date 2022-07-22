@@ -31,7 +31,8 @@ jobs:
           command: |
             dotnet publish --configuration Release --output WebAPIFolder
       - store_artifacts:
-          path: /WebAPIFolder
+          path: ~/project/WebAPIFolder
+          destination: artifact
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
